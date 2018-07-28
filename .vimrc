@@ -89,3 +89,6 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
 inoremap <S-Tab> <C-n>
+let g:airline_powerline_fonts = 1
+let g:airline_theme='dark'
+set t_Co=256
