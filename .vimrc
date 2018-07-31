@@ -23,8 +23,9 @@ set backspace=indent,eol,start
 set ruler               " show line and column number 
 syntax on               " syntax highlighting 
 set showcmd             " show (partial) command in status line 
-imap jk <Esc> 
-imap kj <Esc> 
+imap jj <Esc>
+imap jk <Esc>
+imap kj <Esc>
 
 set incsearch 
 set number 
@@ -92,3 +93,7 @@ inoremap <S-Tab> <C-n>
 let g:airline_powerline_fonts = 1
 let g:airline_theme='dark'
 set t_Co=256
+
+" set default mode of ctrlp to showing MRU files rather than to search for files
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_cmd='CtrlPMRU'
