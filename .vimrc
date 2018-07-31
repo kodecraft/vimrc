@@ -32,8 +32,11 @@ set number
 set hlsearch 
 set mouse=a  "for mouse clicks to be intercepted by terminal programs like vim 
 set wrap!  "do not wrap texts or can use set nowrap 
-
 set rtp+=~/.fzf 
+
+"smarter case insensitive search - should have done this earlier!!
+set ignorecase
+set smartcase
 
 let g:ctrlp_show_hidden = 1 
 let g:ctrlp_match_window = 'results:100' 
