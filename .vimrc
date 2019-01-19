@@ -59,7 +59,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1 
 let g:syntastic_check_on_wq = 0 
 
-
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
@@ -101,6 +100,11 @@ set t_Co=256
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_cmd='CtrlPMRU'
 
+" use ctags - make sure to install exuberant-ctags
+let g:ctrlp_extensions = ['buffertag'] 
+nmap <Leader>/ :CtrlPBufTag<CR>
+nnoremap <leader>. :CtrlPTag<cr>
+
 " using ack to fuzzy search text in current buffer
 nnoremap <Leader>af :Ack  %<Left><Left>
 
@@ -128,3 +132,40 @@ command! FZFLines call fzf#run({
 \   'down':    '60%'
 \})
 nnoremap <Leader>fzf :FZFLines<CR>
+
+" phpactor configs
+"
+let g:phpactorPhpBin = 'php'
+let g:phpactorBranch = 'master'
+let g:phpactorOmniAutoClassImport = v:true
+
+" innclude use statement
+nmap <Leader>u :call phpactor#UseAdd()<CR>
+
+" Invoke the context menu
+nmap <Leader>mm :call phpactor#ContextMenu()<CR>
+
+" Invoke the navigation menu
+nmap <Leader>nn :call phpactor#Navigate()<CR>
+
+" Goto definition of class or class member under the cursor
+nmap <Leader>o :call phpactor#GotoDefinition()<CR>
+
+" Show brief information about the symbol under the cursor
+nmap <Leader>K :call phpactor#Hover()<CR>
+
+" Transform the classes in the current file
+nmap <Leader>tt :call phpactor#Transform()<CR>
+
+" Generate a new class (replacing the current file)
+nmap <Leader>cc :call phpactor#ClassNew()<CR>
+
+" Extract expression (normal mode)
+nmap <silent><Leader>ee :call phpactor#ExtractExpression(v:false)<CR>
+
+" Extract expression from selection
+vmap <silent><Leader>ee :<C-U>call phpactor#ExtractExpression(v:true)<CR>
+
+" Extract method from selection
+vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>:set nopaste
+
