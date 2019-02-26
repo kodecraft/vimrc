@@ -177,6 +177,7 @@ let g:AutoPairsShortcutFastWrap = '<Leader>e'
 " python-mode bindings
 "
 let g:pymode_rope = 1
+let g:pymode_python = 'python3'
 let g:pymode_options_colorcolumn = 0
 let g:pymode_run_bind = '<leader>r'
 let g:pymode_breakpoint_bind = '<leader>b'
