@@ -173,3 +173,20 @@ vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>:set nopaste
 
 " autopair remappings
 let g:AutoPairsShortcutFastWrap = '<Leader>e'
+
+" python-mode bindings
+"
+let g:pymode_rope = 1
+let g:pymode_options_colorcolumn = 0
+let g:pymode_run_bind = '<leader>r'
+let g:pymode_breakpoint_bind = '<leader>b'
+let g:pymode_rope_show_doc_bind = '<leader>pd'
+let g:pymode_rope_goto_definition_bind = '<leader>pg'
+let g:pymode_rope_goto_definition_cmd = 'new'
+let g:pymode_rope_rename_bind = '<leader>pr'
+let g:pymode_rope_module_to_package_bind = '<leader>p1p'
+let g:pymode_rope_extract_method_bind = '<leader>pm'
+let g:pymode_rope_extract_variable_bind = '<leader>pl'
+let g:pymode_rope_use_function_bind = '<leader>pu'
+let g:pymode_rope_move_bind = '<leader>pv'
+let g:pymode_rope_change_signature_bind = '<leader>ps'
